@@ -19,8 +19,18 @@ driver.get('https://www.uts.edu.au/')
 #driver.open()
 
 try:
-    #Click on Staff Button
+     #Click on Search Button then close Search Bar
+    search_button = driver.find_element(By.XPATH, '//*[@id="site-search-toggle"]').click()
+    close_button = driver.find_element(By.XPATH, '/html/body/div[1]/header/div[2]/div[2]/button').click()
+    
+    #Click on Explore Course Areas -> Analytics and Data Science
+    explore_course_areas_button = driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[2]/section/h4').click()
+    analytics_and_data_science_button = driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[2]/section/div/ul/li[1]/a').click()
+
+    #Click on Staff Button, only the search button test and staff button test can work one at a time
     staff_button = driver.find_element(By.XPATH, '/html/body/div[1]/header/div[1]/div/nav/ul/li[1]/a').click()
+
+   
     
 
 finally:
