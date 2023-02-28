@@ -16,10 +16,13 @@ firefox_options.add_argument("--window-size=1920,1080")
 #driver = webdriver.Chrome(service=s, options=options)
 driver = webdriver.Firefox(service = firefox_service, options = firefox_options)
 driver.get('https://www.uts.edu.au/')
-driver.open()
-'''
+#driver.open()
+
 try:
+    #Click on Staff Button
+    staff_button = driver.find_element(By.XPATH, '/html/body/div[1]/header/div[1]/div/nav/ul/li[1]/a').click()
+    
 
 finally:
     driver.quit()
-    '''
+    
