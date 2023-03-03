@@ -13,12 +13,25 @@ firefox_options = Options()
 #firefox_options.add_argument("--ignore-certificate-errors")
 firefox_options.add_argument("--private")
 #firefox_options.add_argument("--headless")
-firefox_options.add_argument("--window-size=1920,1080")
-#driver = webdriver.Chrome(service=s, options=options)
+#firefox_options.add_argument("--window-size=1920,1080")
 driver = webdriver.Firefox(service = firefox_service, options = firefox_options)
 driver.get('https://www.uts.edu.au/')
 #driver.open()
-
+undergrad_and_postgrad_course_areas = [
+    'Analytics and Data Science',
+    'Business',
+    'Communication',
+    'Design, Architecture and Building',
+    'Education',
+    'Engineering',
+    'Health',
+    'Health(GEM)',
+    'Information Technology',
+    'International Studies and Social Sciences',
+    'Law',
+    'Science and Mathematics',
+    'Transdisciplinary Innovation'
+]
 try:
     #Check if the website has a valid certificate by starting with http://
     if driver.current_url.startswith('https://'):
@@ -38,12 +51,12 @@ try:
     random_course_index = random.randint(1, 14)
     #Click on Explore Course Areas -> Finds a random course area to choose from
     explore_course_areas_button = driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[2]/section/h4').click()
-    analytics_and_data_science_button = driver.find_element(By.XPATH, f'/html/body/div[1]/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[2]/section/div/ul/li[{random_course_index}]/a').click()
+    undergrad_and_postgrad_course_areas_button = driver.find_element(By.XPATH, f'/html/body/div[1]/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[2]/section/div/ul/li[{random_course_index}]/a').click()
 
     #Click on Study Button -> Randomly finds a course to choose from to test
     study_button = driver.find_element(By.XPATH, '/html/body/div[1]/header/div[4]/nav/ul/li[1]/span').click()
     find_a_course_button = driver.find_element(By.XPATH, f'/html/body/div[1]/div[3]/main/ul/li[1]/nav/div/ul/li[{random_course_index}]/a').click()
-    
+    print("You have tested this course area: " + undergrad_and_postgrad_course_areas[random_course_index-1])
 
     #Click on Staff Button, only the search button test and staff button test can work one at a time
     staff_button = driver.find_element(By.XPATH, '/html/body/div[1]/header/div[1]/div/nav/ul/li[1]/a').click()
@@ -51,4 +64,6 @@ try:
    
 finally:
     driver.quit()
+
+    
     
