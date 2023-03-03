@@ -19,7 +19,13 @@ driver.get('https://www.uts.edu.au/')
 #driver.open()
 
 try:
-     #Click on Search Button then close Search Bar
+    #Check if the website has a valid certificate by starting with http://
+    if driver.current_url.startswith('https://'):
+        print("The website has a valid certificate.")
+    else:
+        print("The website does not have a valid certificate.")
+
+    #Click on Search Button then close Search Bar
     search_button = driver.find_element(By.XPATH, '//*[@id="site-search-toggle"]').click()
     search_text = driver.find_element(By.XPATH, '//*[@id="edit-search-keys"]').send_keys("UTS")
     close_button = driver.find_element(By.XPATH, '/html/body/div[1]/header/div[2]/div[2]/button').click()
@@ -40,8 +46,6 @@ try:
     staff_button = driver.find_element(By.XPATH, '/html/body/div[1]/header/div[1]/div/nav/ul/li[1]/a').click()
 
    
-    
-
 finally:
     driver.quit()
     
