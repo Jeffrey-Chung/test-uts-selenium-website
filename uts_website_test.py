@@ -5,6 +5,7 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.service import Service
 import os
 import geckodriver_autoinstaller
+import random
 
 geckodriver_autoinstaller.install()
 firefox_service = Service('/usr/local/bin/geckodriver')
@@ -34,13 +35,15 @@ try:
     left_arrow_key = driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div[2]/div[3]/div[2]/div/button[1]').click()
     right_arrow_key = driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div[2]/div[3]/div[2]/div/button[2]').click()
     
-    #Click on Explore Course Areas -> Analytics and Data Science
+    random_course_index = random.randint(1, 14)
+    #Click on Explore Course Areas -> Finds a random course area to choose from
     explore_course_areas_button = driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[2]/section/h4').click()
-    analytics_and_data_science_button = driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[2]/section/div/ul/li[1]/a').click()
+    analytics_and_data_science_button = driver.find_element(By.XPATH, f'/html/body/div[1]/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[2]/section/div/ul/li[{random_course_index}]/a').click()
 
-    #Click on Study Button -> Information Technology
+    #Click on Study Button -> Randomly finds a course to choose from to test
     study_button = driver.find_element(By.XPATH, '/html/body/div[1]/header/div[4]/nav/ul/li[1]/span').click()
-    information_technology_button = driver.find_element(By.XPATH, '/html/body/div[1]/div[3]/main/ul/li[1]/nav/div/ul/li[9]/a').click()
+    find_a_course_button = driver.find_element(By.XPATH, f'/html/body/div[1]/div[3]/main/ul/li[1]/nav/div/ul/li[{random_course_index}]/a').click()
+    
 
     #Click on Staff Button, only the search button test and staff button test can work one at a time
     staff_button = driver.find_element(By.XPATH, '/html/body/div[1]/header/div[1]/div/nav/ul/li[1]/a').click()
