@@ -1,9 +1,7 @@
 from selenium import webdriver
-from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.service import Service
-import os
 import geckodriver_autoinstaller
 import random
 
@@ -48,7 +46,7 @@ try:
     left_arrow_key = driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div[2]/div[3]/div[2]/div/button[1]').click()
     right_arrow_key = driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div[2]/div[3]/div[2]/div/button[2]').click()
     
-    random_course_index = random.randint(1, 14)
+    random_course_index = random.randint(1, 13)
     #Click on Explore Course Areas -> Finds a random course area to choose from
     explore_course_areas_button = driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[2]/section/h4').click()
     undergrad_and_postgrad_course_areas_button = driver.find_element(By.XPATH, f'/html/body/div[1]/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[2]/section/div/ul/li[{random_course_index}]/a').click()
