@@ -23,10 +23,18 @@ try:
     search_button = driver.find_element(By.XPATH, '//*[@id="site-search-toggle"]').click()
     search_text = driver.find_element(By.XPATH, '//*[@id="edit-search-keys"]').send_keys("UTS")
     close_button = driver.find_element(By.XPATH, '/html/body/div[1]/header/div[2]/div[2]/button').click()
+
+    #Click on Arrow keys on What's Happening Section
+    left_arrow_key = driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div[2]/div[3]/div[2]/div/button[1]').click()
+    right_arrow_key = driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div[2]/div[3]/div[2]/div/button[2]').click()
     
     #Click on Explore Course Areas -> Analytics and Data Science
     explore_course_areas_button = driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[2]/section/h4').click()
     analytics_and_data_science_button = driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div[2]/div[1]/div/div[2]/div[1]/div[2]/section/div/ul/li[1]/a').click()
+
+    #Click on Study Button -> Information Technology
+    study_button = driver.find_element(By.XPATH, '/html/body/div[1]/header/div[4]/nav/ul/li[1]/span').click()
+    information_technology_button = driver.find_element(By.XPATH, '/html/body/div[1]/div[3]/main/ul/li[1]/nav/div/ul/li[9]/a').click()
 
     #Click on Staff Button, only the search button test and staff button test can work one at a time
     staff_button = driver.find_element(By.XPATH, '/html/body/div[1]/header/div[1]/div/nav/ul/li[1]/a').click()
