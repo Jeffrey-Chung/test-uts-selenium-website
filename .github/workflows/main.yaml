@@ -17,10 +17,8 @@ jobs:
         with:
           python-version: 3.9
 
-      - name: Install selenium
+      - name: Install Selenium
         run: pip install selenium
-      - name: Install geckodriver Auto Installer
-        run: pip install geckodriver_autoinstaller
 
       - name: Run the Python Script
         run: python3 uts_website_test.py

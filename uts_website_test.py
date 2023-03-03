@@ -2,10 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.service import Service
-import geckodriver_autoinstaller
 import random
 
-geckodriver_autoinstaller.install()
 firefox_service = Service('/usr/local/bin/geckodriver')
 firefox_options = Options()
 #firefox_options.add_argument("--ignore-certificate-errors")
