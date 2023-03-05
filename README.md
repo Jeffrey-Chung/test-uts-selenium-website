@@ -54,7 +54,7 @@ An example of the script sucessfully running on GitHub:
 
 
   
-## Contributing ![GitHub]
+## Contributing
 
 Want to improve this? Create a pull request with detailed changes / improvements! If approved you will be added to the list of contributors of this awesome project!
 
