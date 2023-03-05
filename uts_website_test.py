@@ -38,8 +38,8 @@ try:
         print("The website does not have a valid certificate.")
 
     #Click on Search Button then close Search Bar
-    search_button = driver.find_element(By.XPATH, '//*[@id="site-search-toggle"]').click()
-    search_text = driver.find_element(By.XPATH, '//*[@id="edit-search-keys"]').send_keys("UTS")
+    search_button = driver.find_element("id", 'site-search-toggle').click()
+    search_text = driver.find_element("id", 'edit-search-keys').send_keys("UTS")
     close_button = driver.find_element(By.XPATH, '/html/body/div[1]/header/div[2]/div[2]/button').click()
 
     #Click on Arrow keys on What's Happening Section
