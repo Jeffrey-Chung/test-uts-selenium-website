@@ -3,7 +3,7 @@ name: Run UTS Website UI Test on Github Action
 on:
   push:
     branches:
-      - main
+      - selenium
 
 jobs:
   scrape:
