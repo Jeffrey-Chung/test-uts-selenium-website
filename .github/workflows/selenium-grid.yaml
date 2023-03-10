@@ -30,7 +30,7 @@ jobs:
         run: ./wait-for-grid.sh
 
       - name: Run the Python Script
-        run: python3 -m unittest test_uts_website.py
+        run: python3 test_uts_website.py
       
       - name: Setdown Docker Compose
         run: docker-compose -f docker-compose.yaml down

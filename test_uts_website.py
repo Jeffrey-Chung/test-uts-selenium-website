@@ -3,7 +3,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.service import Service
 import random
-import unittest
 
 
 undergrad_and_postgrad_course_areas = [
