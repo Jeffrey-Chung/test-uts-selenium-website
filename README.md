@@ -41,8 +41,8 @@ To use <b><i>Github Action</b></i>:
 <br>
 
 #### Branches
-main - Runs test on Selenium Grid
-selenium - Runs test on Selenium
+- main - Runs test on Selenium Grid
+- selenium - Runs test on Selenium
 
 #### Demo(s) 
 
