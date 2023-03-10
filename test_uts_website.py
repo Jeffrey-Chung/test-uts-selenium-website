@@ -6,7 +6,6 @@ import random
 import unittest
 
 
-#driver.open()
 undergrad_and_postgrad_course_areas = [
     'Analytics and Data Science',
     'Business',
