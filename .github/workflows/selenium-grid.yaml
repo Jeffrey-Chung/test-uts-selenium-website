@@ -3,6 +3,8 @@ name: Run Selenium Grid UTS Website UI Test on Github Action
 on:
   push:
     branches:
+      - main
+      - master
       - selenium-grid
 
 jobs:
