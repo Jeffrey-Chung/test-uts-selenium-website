@@ -29,7 +29,13 @@ firefox_options = Options()
 firefox_options.add_argument("--private")
 #firefox_options.add_argument("--headless")
 #firefox_options.add_argument("--window-size=1920,1080")
-firefox_driver = webdriver.Firefox(service = firefox_service, options = firefox_options)
+#firefox_driver = webdriver.Firefox(service = firefox_service, options = firefox_options)
+
+
+
+firefox_driver = webdriver.Remote(
+   command_executor='http://172.19.104.168:4444/wd/hub',
+options=firefox_options)
 firefox_driver.get('https://www.uts.edu.au/')
 
 def ui_test(driver):
