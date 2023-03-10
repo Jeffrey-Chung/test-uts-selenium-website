@@ -21,4 +21,4 @@ jobs:
         run: pip install selenium
 
       - name: Run the Python Script
-        run: python3 uts_website_test.py
+        run: python3 -m unittest test_uts_website.py
