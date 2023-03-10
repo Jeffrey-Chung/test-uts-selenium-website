@@ -1,5 +1,6 @@
 #!/bin/bash
 # wait-for-grid.sh
+# Make sure Workflow permissions is read and write
 
 set -e
 
