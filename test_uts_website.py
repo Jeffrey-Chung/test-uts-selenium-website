@@ -30,7 +30,7 @@ firefox_options.add_argument("--height=1080")
 #firefox_driver = webdriver.Firefox(service = firefox_service, options = firefox_options)
 
 driver = webdriver.Remote(
-command_executor='http://172.19.104.168:4444/wd/hub',
+command_executor='http://localhost:4444',
 options=firefox_options)
 driver.get('https://www.uts.edu.au/')
 
