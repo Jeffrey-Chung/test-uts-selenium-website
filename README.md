@@ -53,8 +53,8 @@ An example of the script sucessfully running on GitHub:
 
 
 #### Branches:
-main, selenium-grid: Run tests on Selenium Grid
-selenium: Run tests on Selenium
+- main, selenium-grid: Run tests on Selenium Grid
+- selenium: Run tests on Selenium
   
 ## Contributing
 
