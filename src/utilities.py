@@ -1,9 +1,14 @@
+'''
+This script stores all the common functions between the 3 test files. Including setup the drivers and the tests itself
+In theory, you don't need to change anything on this script except adding your link to the driver.
+'''
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import random
 import unittest
-
 
 undergrad_and_postgrad_course_areas = [
 'Analytics and Data Science',
@@ -21,19 +26,25 @@ undergrad_and_postgrad_course_areas = [
 'Transdisciplinary Innovation'
 ]
 
-#firefox_service = Service('/usr/local/bin/geckodriver')
-firefox_options = webdriver.FirefoxOptions()
-#firefox_options.add_argument("--ignore-certificate-errors")
-firefox_options.add_argument("--private")
-firefox_options.add_argument("--headless")
-firefox_options.add_argument("--width=1920")
-firefox_options.add_argument("--height=1080")
-#firefox_driver = webdriver.Firefox(service = firefox_service, options = firefox_options)
+#function to set the same options for each browser
+def set_options(driver_options):
+        #Uncomment the line below if you want to run your tests on headless
+        #driver_options.add_argument("--headless")
+        driver_options.add_argument("--private")
+        driver_options.add_argument("--headless")
+        driver_options.add_argument("--width=1920")
+        driver_options.add_argument("--height=1080")
 
-firefox_driver = webdriver.Remote(
-command_executor='http://localhost:4444',
-options=firefox_options)
-firefox_driver.get('https://www.uts.edu.au/')
+#Function to configure settings for each driver
+def setup_driver(driver_options):
+        driver = webdriver.Remote( 
+        command_executor="http://localhost:4444",
+        options=driver_options
+        )
+
+        #Make sure you paste your URL in the line below
+        driver.get('https://www.uts.edu.au/')
+        return driver
 
 
 def ui_test(driver):
@@ -73,11 +84,3 @@ def ui_test(driver):
             successful_run = "Test has ran sucessfully"
             return successful_run
             
-
-class UITest(unittest.TestCase):
-    def test_uts_website(self):
-         self.assertEqual(ui_test(firefox_driver), "Test has ran sucessfully")
-
-    
-if __name__ == "__main__":
-    unittest.main()
