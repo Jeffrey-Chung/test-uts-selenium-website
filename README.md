@@ -31,11 +31,9 @@ To use <b><i>Github Action</b></i>:
 
 - Push/merge any code to the main branch and it will run the tests on the UTS website on Windows
 
-- Make changes as needed to the Python script <code>test_uts_website.py</code>. 
+- Make changes as needed to the Python script <code>utitilies.py</code> for changing the tests. 
 
-- If you change the name uts_website_test.py - reflect the changes in the GitHub Action <code>main.yaml</code> file. 
-
-- Make changes as needed to the <code>main.yaml</code> file.
+- Make changes as needed to the <code>selenium-grid.yaml</code> file for the CI/CD workflow.
 
 
 <br>
@@ -53,7 +51,7 @@ An example of the script sucessfully running on GitHub:
 
 
 #### Branches:
-- main, selenium-grid: Run tests on Selenium Grid
+- main: Run tests on Selenium Grid
 - selenium: Run tests on Selenium
   
 ## Contributing

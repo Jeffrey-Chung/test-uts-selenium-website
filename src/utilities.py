@@ -28,12 +28,9 @@ undergrad_and_postgrad_course_areas = [
 
 #function to set the same options for each browser
 def set_options(driver_options):
-        #Uncomment the line below if you want to run your tests on headless
-        #driver_options.add_argument("--headless")
         driver_options.add_argument("--private")
         driver_options.add_argument("--headless")
-        driver_options.add_argument("--width=1920")
-        driver_options.add_argument("--height=1080")
+        
 
 #Function to configure settings for each driver
 def setup_driver(driver_options):
