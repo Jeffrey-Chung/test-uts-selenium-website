@@ -33,6 +33,12 @@ jobs:
       
       - name: Running the Firefox Tests
         run: python3 src/test_firefox.py
+      
+      - name: Running the Chrome Tests
+        run: python3 src/test_chrome.py
+      
+      - name: Running the Edge Tests
+        run: python3 src/test_edge.py
 
       - name: Setdown Docker Compose
         run: docker-compose -f docker-compose.yaml down
