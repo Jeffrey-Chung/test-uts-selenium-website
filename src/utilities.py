@@ -74,7 +74,7 @@ def ui_test(driver):
 
         # Click on Study Button -> Randomly finds a course to choose from to test
         find_course_xpath = f'/html/body/div[1]/div[3]/main/ul/li[1]/nav/div/ul/li[{rand_index}]/a'
-        driver.find_element(By.XPATH, '/html/body/div[1]/header/div[4]/nav/ul/li[1]/span').click()
+        driver.find_element(By.XPATH, '//*[@id="block-mainnavigation"]/nav/ul/li[1]/span').click()
         driver.find_element(By.XPATH, find_course_xpath).click()
 
         # Click on Search Button then close Search Bar
