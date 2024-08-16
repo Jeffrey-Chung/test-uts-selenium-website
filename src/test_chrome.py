@@ -1,22 +1,23 @@
-'''This script will run the tests on chrome
 '''
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import utilities
-import random
+This script will run the tests on chrome
+'''
 import unittest
+from selenium import webdriver
+import utilities
 
-class UITest_Chrome(unittest.TestCase):
+class UItestChrome(unittest.TestCase):
+    '''
+    Class to run tests on Google Chrome
+    '''
     def test_uts_website(self):
-         self.assertEqual(utilities.ui_test(chrome_driver), "Test has ran sucessfully")
+        '''
+        Test to check if test has been ran successfully
+        '''
+        self.assertEqual(utilities.ui_test(chrome_driver), "Test has ran sucessfully")
 
 if __name__ == "__main__":
-        chrome_options = webdriver.ChromeOptions()
-        utilities.set_options(chrome_options)  
-        #Configure the driver
-        chrome_driver = utilities.setup_driver(chrome_options)
-        unittest.main()
-
+    chrome_options = webdriver.ChromeOptions()
+    utilities.set_options(chrome_options)
+    # Configure the driver
+    chrome_driver = utilities.setup_driver(chrome_options)
+    unittest.main()

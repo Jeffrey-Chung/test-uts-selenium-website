@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Local file to enable pylint
+use_bash_rc.txt
