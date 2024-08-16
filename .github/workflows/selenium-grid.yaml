@@ -34,9 +34,7 @@ jobs:
         run: ./wait-for-grid.sh
         
       - name: Run Linting checks
-        run: |
-          pylint src/test_firefox.py
-          pylint -d E0606 src/test_firefox.py
+        run: pylint -d E0606 src/test_firefox.py
       
       - name: Running the Firefox Tests
         run: python3 src/test_firefox.py
@@ -71,9 +69,7 @@ jobs:
         run: ./wait-for-grid.sh
 
       - name: Run Linting checks
-        run: |
-          pylint src/test_chrome.py
-          pylint -d E0606 src/test_chrome.py
+        run: pylint -d E0606 src/test_chrome.py
             
       - name: Running the Chrome Tests
         run: python3 src/test_chrome.py
@@ -108,9 +104,7 @@ jobs:
         run: ./wait-for-grid.sh
 
       - name: Run Linting checks
-        run: |
-          pylint src/test_edge.py
-          pylint -d E0606 src/test_edge.py
+        run: pylint -d E0606 src/test_edge.py
                   
       - name: Running the Edge Tests
         run: python3 src/test_edge.py
