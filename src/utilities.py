@@ -84,7 +84,7 @@ def ui_test(driver):
 
         # Click on Staff Button
         # only the search button test and staff button test can work one at a time
-        driver.find_element(By.XPATH, '/html/body/div[1]/header/div[1]/div/nav/ul/li[1]/a').click()
+        driver.find_element(By.XPATH, '/html/body/div[1]/header/div[1]/div/nav/ul/li[1]').click()
 
     finally:
         result = "Test has ran sucessfully"
