@@ -23,7 +23,7 @@ jobs:
         run: pip install selenium
 
       - name: Setup Docker Compose
-        run: docker-compose -f docker-compose.yaml up -d
+        run: docker compose -f docker-compose.yaml up -d
 
       - name: Give Write Access to Wait for Grid Script
         run: chmod +x wait-for-grid.sh
@@ -40,7 +40,7 @@ jobs:
         run: python3 src/test_firefox.py
 
       - name: Setdown Docker Compose
-        run: docker-compose -f docker-compose.yaml down
+        run: docker compose -f docker-compose.yaml down
   
   chrome_tests:
     runs-on: ubuntu-latest
@@ -58,7 +58,7 @@ jobs:
         run: pip install selenium
       
       - name: Setup Docker Compose
-        run: docker-compose -f docker-compose.yaml up -d
+        run: docker compose -f docker-compose.yaml up -d
       
       - name: Give Write Access to Wait for Grid Script
         run: chmod +x wait-for-grid.sh
@@ -75,7 +75,7 @@ jobs:
         run: python3 src/test_chrome.py
       
       - name: Setdown Docker Compose
-        run: docker-compose -f docker-compose.yaml down
+        run: docker compose -f docker-compose.yaml down
 
   edge_tests:
     runs-on: ubuntu-latest
@@ -93,7 +93,7 @@ jobs:
         run: pip install selenium
             
       - name: Setup Docker Compose
-        run: docker-compose -f docker-compose.yaml up -d
+        run: docker compose -f docker-compose.yaml up -d
             
       - name: Give Write Access to Wait for Grid Script
         run: chmod +x wait-for-grid.sh
@@ -110,5 +110,5 @@ jobs:
         run: python3 src/test_edge.py
             
       - name: Setdown Docker Compose
-        run: docker-compose -f docker-compose.yaml down
+        run: docker compose -f docker-compose.yaml down
 
