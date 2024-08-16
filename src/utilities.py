@@ -56,8 +56,8 @@ def ui_test(driver):
             print("The website does not have a valid certificate.")
 
         # Click on Arrow keys on What's Happening Section
-        left_arrow_key_xpath = '/html/body/div[1]/div[2]/div[2]/div[3]/div[2]/div/button[1]'
-        right_arrow_key_xpath = '/html/body/div[1]/div[2]/div[2]/div[3]/div[2]/div/button[2]'
+        left_arrow_key_xpath = '/html/body/div[1]/div[2]/div[1]/div/button[1]'
+        right_arrow_key_xpath = '/html/body/div[1]/div[2]/div[1]/div/button[3]'
         driver.find_element(By.XPATH, left_arrow_key_xpath).click()
         driver.find_element(By.XPATH, right_arrow_key_xpath).click()
 
