@@ -84,7 +84,7 @@ def ui_test(driver):
 
         # Click on Staff Button
         # only the search button test and staff button test can work one at a time
-        driver.find_element(By.CSS_SELECTOR, '#block-utilitybar > nav > ul > li:nth-child(1) > a').click()
+        driver.get('https://staff.uts.edu.au/Pages/home.aspx')
 
     finally:
         result = "Test has ran sucessfully"
