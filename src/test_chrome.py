@@ -13,12 +13,11 @@ class UItestChrome(unittest.TestCase):
         '''
         Test to check if test has been ran successfully
         '''
-        self.assertEqual(utilities.ui_test(CHROME_DRIVER), "Test has ran sucessfully")
+        self.assertEqual(utilities.ui_test(chrome_driver), "Test has ran sucessfully")
 
 if __name__ == "__main__":
     chrome_options = webdriver.ChromeOptions()
     utilities.set_options(chrome_options)
     # Configure the driver
-    CHROME_DRIVER = None
-    CHROME_DRIVER = utilities.setup_driver(chrome_options)
+    chrome_driver = utilities.setup_driver(chrome_options)
     unittest.main()

@@ -13,12 +13,11 @@ class UITestEdge(unittest.TestCase):
         '''
         Test to check if test has been ran successfully
         '''
-        self.assertEqual(utilities.ui_test(EDGE_DRIVER), "Test has ran sucessfully")
+        self.assertEqual(utilities.ui_test(edge_driver), "Test has ran sucessfully")
 
 if __name__ == "__main__":
     edge_options = webdriver.EdgeOptions()
     utilities.set_options(edge_options)
     # Configure the driver
-    EDGE_DRIVER = None
-    EDGE_DRIVER = utilities.setup_driver(edge_options)
+    edge_driver = utilities.setup_driver(edge_options)
     unittest.main()
