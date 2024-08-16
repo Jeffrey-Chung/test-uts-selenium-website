@@ -13,11 +13,12 @@ class UITestFirefox(unittest.TestCase):
         '''
         Test to check if test has been ran successfully
         '''
-        self.assertEqual(utilities.ui_test(firefox_driver), "Test has ran sucessfully")
+        self.assertEqual(utilities.ui_test(FIREFOX_DRIVER), "Test has ran sucessfully")
 
 if __name__ == "__main__":
     firefox_options = webdriver.FirefoxOptions()
     utilities.set_options(firefox_options)
     # Configure the driver
-    firefox_driver = utilities.setup_driver(firefox_options)
+    FIREFOX_DRIVER = None
+    FIREFOX_DRIVER = utilities.setup_driver(firefox_options)
     unittest.main()
